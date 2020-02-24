@@ -36,6 +36,11 @@ public class HerokuApplication {
         return InetAddress.getLocalHost().getHostName() + "@" + InetAddress.getLocalHost().getHostAddress();
     }
 
+    @GetMapping("v2/info")
+    public String info2() throws Exception {
+        return info() + " from v2";
+    }
+
     //    @Scheduled(fixedDelay = 3000000L)
     public void webhook() throws Exception {
         DiscordWebhook webhook = new DiscordWebhook(url);
